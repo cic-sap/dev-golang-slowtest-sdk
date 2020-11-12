@@ -79,3 +79,10 @@ func (r *SlowTestRun) WaitSignal(m *testing.M) {
 	log.Println("end WaitSignal")
 
 }
+
+func RunCase(t *testing.T, f func()) {
+	GetSlowTestRunner().RunCase(t, f)
+}
+func WaitSignal(m *testing.M) {
+	GetSlowTestRunner().WaitSignal(m)
+}
