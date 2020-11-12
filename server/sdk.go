@@ -80,6 +80,10 @@ func (r *SlowTestRun) WaitSignal(m *testing.M) {
 
 }
 
+func init() {
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
+}
+
 func RunCase(t *testing.T, f func()) {
 	GetSlowTestRunner().RunCase(t, f)
 }
